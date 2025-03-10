@@ -1,0 +1,100 @@
+package com.yourcompany;
+
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.common.serialization.Serdes;
+import org.apache.kafka.streams.StreamsBuilder;
+import org.apache.kafka.streams.KafkaStreams;
+import org.apache.kafka.streams.KeyValue;
+import org.apache.kafka.streams.kstream.KStream;
+import org.apache.kafka.streams.StreamsConfig;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Properties;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.Map.Entry;
+
+
+public class DynamicServiceRouter {
+    public static void main(String[] args) {
+        StreamsBuilder builder = new StreamsBuilder();
+        KStream<String, String> sourceStream = builder.stream("k_cars");
+        ObjectMapper objectMapper = new ObjectMapper();
+        final AtomicLong processedCount = new AtomicLong(0);
+        long startTime = System.currentTimeMillis();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        sourceStream.flatMap((key, value) -> {
+            System.out.println("Received from k_cars -> Key: " + key + ", Value: " + value);
+            //09/
+            //String currentTime2 = dateFormat.format(new Date());
+            //System.out.println("streams start: 40:10:0:"+currentTime2);
+
+            List<KeyValue<String, String>> results = new ArrayList<>();
+            try {
+                JsonNode jsonNode = objectMapper.readTree(value);
+                Iterator<Entry<String, JsonNode>> fields = jsonNode.fields();
+                while (fields.hasNext()) {
+                    Entry<String, JsonNode> field = fields.next();
+                    results.add(new KeyValue<>(field.getKey(), field.getValue().asText()));
+                }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        //09/
+        //System.out.println(results);
+        return results;
+                })
+                .peek((key, value) -> {
+                    System.out.println("Parsed Value -> Key: " + key + ", Value: " + value);
+                    long count = processedCount.incrementAndGet();
+                    //System.out.println(count);
+                    long div = 80;
+                    if (count % div ==0) { //4000
+                        synchronized (processedCount) {
+                            // Double-check to handle race condition
+                            if (count % div ==0) {
+                                String currentTime = dateFormat.format(new Date());
+                                System.out.println("Turator: 80:1:"+count/div +": " + currentTime);
+                            }
+                        }
+                    }
+             })
+            .to((key, value, recordContext) -> key); // Dynamic topic naming based on service key
+            //  .to((key, value, recordContext) -> {
+            //     // 현재 시간을 출력하는 부분 추가
+            //     String sendTime = dateFormat.format(new Date());
+            //     System.out.println("Message sent at: " + sendTime + ": to topic with key: " + key);
+                
+            //     // 동적으로 토픽명을 설정할 경우 key를 리턴
+            //     return key;
+            // });
+        KafkaStreams streams = new KafkaStreams(builder.build(), properties());
+        streams.start();
+        // Add shutdown hook to correctly close the streams application
+        Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
+    }
+
+    private static Properties properties() {
+        Properties props = new Properties();
+        props.put("application.id", "dynamic-service-router");
+        props.put("bootstrap.servers", "192.168.0.1:9092");
+        props.put("default.key.serde", Serdes.String().getClass().getName());
+        props.put("default.value.serde", Serdes.String().getClass().getName());
+        props.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, 0); // Commit every 10 ms
+        props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 0); // Disable record cache
+        props.put(StreamsConfig.NUM_STREAM_THREADS_CONFIG, 1); // Example: 4 threads
+
+        //option 실험
+        props.put(StreamsConfig.POLL_MS_CONFIG, 0);
+        props.put(StreamsConfig.CLIENT_ID_CONFIG, "dynamic-service-router"); 
+        //props.put(ProducerConfig.LINGER_MS_CONFIG, 0);
+        //props.put("client.id","dynamic-service-router");
+        return props;
+    }
+}

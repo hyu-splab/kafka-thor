@@ -1,0 +1,383 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "src",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						18
+					]
+				},
+				{
+					"build" : "src-cpp",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src-cpp",
+					"targetIndexes" : 
+					[
+						19
+					]
+				},
+				{
+					"build" : "examples",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "examples",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						20,
+						21,
+						22,
+						23,
+						24,
+						26,
+						27
+					]
+				},
+				{
+					"build" : "tests",
+					"childIndexes" : 
+					[
+						5
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tests",
+					"targetIndexes" : 
+					[
+						25
+					]
+				},
+				{
+					"build" : "tests/interceptor_test",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 0,
+					"source" : "tests/interceptor_test",
+					"targetIndexes" : 
+					[
+						9
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"name" : "RdKafka",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "alter_consumer_group_offsets::@714eac15f71a94114fdf",
+					"jsonFile" : "target-alter_consumer_group_offsets-Debug-0215884456104935645b.json",
+					"name" : "alter_consumer_group_offsets",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "consumer::@714eac15f71a94114fdf",
+					"jsonFile" : "target-consumer-Debug-73a0d660ec06baa44903.json",
+					"name" : "consumer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "delete_records::@714eac15f71a94114fdf",
+					"jsonFile" : "target-delete_records-Debug-fbcc78010938d71c6e0c.json",
+					"name" : "delete_records",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "describe_cluster::@714eac15f71a94114fdf",
+					"jsonFile" : "target-describe_cluster-Debug-7bb48cc0a6cef274ee9b.json",
+					"name" : "describe_cluster",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "describe_consumer_groups::@714eac15f71a94114fdf",
+					"jsonFile" : "target-describe_consumer_groups-Debug-162c8042253792ec7070.json",
+					"name" : "describe_consumer_groups",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "describe_topics::@714eac15f71a94114fdf",
+					"jsonFile" : "target-describe_topics-Debug-b4cbb449ef924a638415.json",
+					"name" : "describe_topics",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "elect_leaders::@714eac15f71a94114fdf",
+					"jsonFile" : "target-elect_leaders-Debug-080a3338eaa1c897c979.json",
+					"name" : "elect_leaders",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "idempotent_producer::@714eac15f71a94114fdf",
+					"jsonFile" : "target-idempotent_producer-Debug-3796c840e1a291541369.json",
+					"name" : "idempotent_producer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "incremental_alter_configs::@714eac15f71a94114fdf",
+					"jsonFile" : "target-incremental_alter_configs-Debug-ce80d6bd1e0eff1f76b2.json",
+					"name" : "incremental_alter_configs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "interceptor_test::@d58745a40a5c1839efea",
+					"jsonFile" : "target-interceptor_test-Debug-52006cab20e1acaa55a5.json",
+					"name" : "interceptor_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "kafkatest_verifiable_client::@714eac15f71a94114fdf",
+					"jsonFile" : "target-kafkatest_verifiable_client-Debug-9e6f75dcc4ec57d3805c.json",
+					"name" : "kafkatest_verifiable_client",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "list_consumer_group_offsets::@714eac15f71a94114fdf",
+					"jsonFile" : "target-list_consumer_group_offsets-Debug-9063ab4d4c843c070d96.json",
+					"name" : "list_consumer_group_offsets",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "list_consumer_groups::@714eac15f71a94114fdf",
+					"jsonFile" : "target-list_consumer_groups-Debug-7dd4eff804eab1fce35b.json",
+					"name" : "list_consumer_groups",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "list_offsets::@714eac15f71a94114fdf",
+					"jsonFile" : "target-list_offsets-Debug-968007e3047e72310251.json",
+					"name" : "list_offsets",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "misc::@714eac15f71a94114fdf",
+					"jsonFile" : "target-misc-Debug-2ae65cc29939fca45506.json",
+					"name" : "misc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "openssl_engine_example_cpp::@714eac15f71a94114fdf",
+					"jsonFile" : "target-openssl_engine_example_cpp-Debug-79eed4924ebdf90efea0.json",
+					"name" : "openssl_engine_example_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "producer::@714eac15f71a94114fdf",
+					"jsonFile" : "target-producer-Debug-66b07193bede6ca13fba.json",
+					"name" : "producer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "producer_cpp::@714eac15f71a94114fdf",
+					"jsonFile" : "target-producer_cpp-Debug-6fed4af3e77965ebd174.json",
+					"name" : "producer_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "rdkafka::@145eef247bfb46b6828c",
+					"jsonFile" : "target-rdkafka-Debug-9f5155f2f59eda47e88a.json",
+					"name" : "rdkafka",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "rdkafka++::@fdf6894f388940599170",
+					"jsonFile" : "target-rdkafka++-Debug-2ba73a6e5e0a513566b2.json",
+					"name" : "rdkafka++",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rdkafka_complex_consumer_example::@714eac15f71a94114fdf",
+					"jsonFile" : "target-rdkafka_complex_consumer_example-Debug-a0e978fd1ae101320de4.json",
+					"name" : "rdkafka_complex_consumer_example",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rdkafka_complex_consumer_example_cpp::@714eac15f71a94114fdf",
+					"jsonFile" : "target-rdkafka_complex_consumer_example_cpp-Debug-ca5adf114206bb9647ce.json",
+					"name" : "rdkafka_complex_consumer_example_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rdkafka_example::@714eac15f71a94114fdf",
+					"jsonFile" : "target-rdkafka_example-Debug-b5961130ddef4ab54e45.json",
+					"name" : "rdkafka_example",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rdkafka_example_cpp::@714eac15f71a94114fdf",
+					"jsonFile" : "target-rdkafka_example_cpp-Debug-d79f1dfbd3130ae1d189.json",
+					"name" : "rdkafka_example_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rdkafka_performance::@714eac15f71a94114fdf",
+					"jsonFile" : "target-rdkafka_performance-Debug-b3f75b783b4152596b22.json",
+					"name" : "rdkafka_performance",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "test-runner::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-test-runner-Debug-20d79911d35f88abf6db.json",
+					"name" : "test-runner",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "transactions::@714eac15f71a94114fdf",
+					"jsonFile" : "target-transactions-Debug-f86b686e55db558a81a3.json",
+					"name" : "transactions",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "user_scram::@714eac15f71a94114fdf",
+					"jsonFile" : "target-user_scram-Debug-601db136ca6e181ac128.json",
+					"name" : "user_scram",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/hss544/librdkafka/build",
+		"source" : "/home/hss544/librdkafka"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

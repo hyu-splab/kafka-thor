@@ -1,0 +1,22 @@
+{
+  "name": "MqttSourceConnectorXsmt",
+  "config": {
+    "connector.class": "io.confluent.connect.mqtt.MqttSourceConnector",
+    "tasks.max": "5",
+    "mqtt.server.uri": "tcp://localhost:1883",
+    "confluent.topic.bootstrap.servers": "192.168.0.1:9092",
+    "mqtt.topics": "#",   
+    
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "org.apache.kafka.connect.converters.ByteArrayConverter",
+    "key.converter.schemas.enable": false,
+    "value.converter.schemas.enable": false,
+
+    "transforms": "ExtractServiceName",
+    "transforms.ExtractServiceName.type": "com.example.kafka.smt.extractService",
+
+    "producer.override.acks": "0",
+    "records.buffer.queue.empty.timeout": "10",
+	"confluent.license.topics.replication.factor": "1"
+  }
+}

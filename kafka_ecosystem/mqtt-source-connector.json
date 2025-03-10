@@ -1,0 +1,22 @@
+{
+  "name": "MqttSourceConnectorX3",
+  "config": {
+    "connector.class": "io.confluent.connect.mqtt.MqttSourceConnector",
+    "tasks.max": 5,
+    "mqtt.server.uri": "tcp://localhost:1883",
+    "mqtt.topics": "#",    
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "org.apache.kafka.connect.converters.ByteArrayConverter",
+    "key.converter.schemas.enable": false,
+    "value.converter.schemas.enable": false,
+    "kafka.topic": "k_cars",
+    "confluent.topic.bootstrap.servers": "192.168.0.1:9092",
+    "confluent.topic.replication.factor": 1,
+
+    "producer.override.acks": 0,
+    "records.buffer.queue.empty.timeout": 10
+
+
+
+  }
+}
