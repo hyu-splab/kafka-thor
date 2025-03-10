@@ -24,14 +24,14 @@ gzip -d ./*.jar
 ```
 For Different Kafka Implementations
 1. Kafka Streams
-MQTT Connector: mqtt-source-connector.json
-Kafka Stream Application: DynamicServiceRouter.class
-Testing Program: curator/src/Multi_Stream.cpp
+ - MQTT Connector: mqtt-source-connector.json
+ - Kafka Stream Application: DynamicServiceRouter.class
+ - Testing Program: curator/src/Multi_Stream.cpp
 2. Kafka SMT (Single Message Transform)
-MQTT Connector: smt-mqtt-source-connector.json
-Testing Program: curator/src/Multi_SMT
+ - MQTT Connector: smt-mqtt-source-connector.json
+ - Testing Program: curator/src/Multi_SMT
 3. Kafka-Thor
-Main Program: curator/src/Thor.cpp
-Testing Program: curator/src/Multi_Thor.cpp
+ - Main Program: curator/src/Thor.cpp
+ - Testing Program: curator/src/Multi_Thor.cpp
 
 For all above, use curator/src/Vehicle.cpp to simulate othger cars
