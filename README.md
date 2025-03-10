@@ -3,8 +3,8 @@
 
 ## **Prerequisites**
 
-- Download **RapidJSON** for `curator`
-- Download **nlohmann/json** for `Multi` (testing program)
+- Download **RapidJSON** for `curator` at https://github.com/Tencent/rapidjson
+- Download **nlohmann/json** for `Multi` (testing program) at https://github.com/nlohmann/json
 - Compile and install **librdkafka** (used in this repository)
 
 ```bash
